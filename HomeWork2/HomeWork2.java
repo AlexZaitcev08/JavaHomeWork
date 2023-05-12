@@ -1,9 +1,11 @@
 import java.util.Scanner;
 public class HomeWork2 {
     public static void main(String[] args) {
-        // quadraticRootNumber();
-        // isNumberHappy();
-        // getFactorial();
+//        quadraticRootNumber();
+//        isNumberHappy();
+//        getFactorial();
+//        numbersCoprime();
+//        sumNum();
     }
 
 
@@ -48,6 +50,7 @@ public class HomeWork2 {
     }
 
     public static void getFactorial() {
+        //Вычисление факториала
         Scanner in = new Scanner(System.in);
         System.out.print("Введите числа для вычисления факториала: ");
         int n = in.nextInt();
@@ -60,7 +63,46 @@ public class HomeWork2 {
         }
         return result;
     }
+    public static void numbersCoprime() {
+        //Определить, являются ли два заданных числа m и n взаимно простыми.
+        //Взаимно простые числа не имеют общих делителей, кроме 1.
+        //Например, 25 и 49 взаимно простые, а 6 и 8 -- нет.
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите число m: ");
+        int m = in.nextInt();
+        System.out.println("Введите число n: ");
+        int n = in.nextInt();
+        int max;
+        int d = 0;
+        if (m >= n) {
+            max = m;
+        } else {
+            max = n;
+        }
+        for (int i = 2; i <= max; i++) {
+            if (m % i == 0 && n % i == 0) d++;
+        }
+        if (d == 0) {
+            System.out.println("Взаимно простые");
+        } else {
+            System.out.println("Не взаимно простые");
+        }
     }
+    public static void sumNum() {
+        //Найти количество цифр в заданном числе n.
+        //Например, число 1 содержит 1 цифру, 456 -- 3 цифры, 65536 -- 5 цифр.
+        //Использовать операции со строками в этой задаче запрещается.
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите число: ");
+        int n = in.nextInt();
+        int x = 0;
+        for (; n != 0; n /= 10) ++x;
+        System.out.println("Число содержит " + x + " цифр(ы)!");
+    }
+
+
+}
 
 
 
