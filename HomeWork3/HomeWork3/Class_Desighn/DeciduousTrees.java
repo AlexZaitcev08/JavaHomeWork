@@ -1,6 +1,9 @@
 package Class_Desighn;
 
 public abstract class DeciduousTrees {
+    private String name;
+    private int amount;
+
     String leafColor;
     String barkColor;
     public DeciduousTrees(String leafColor,String barkColor){
