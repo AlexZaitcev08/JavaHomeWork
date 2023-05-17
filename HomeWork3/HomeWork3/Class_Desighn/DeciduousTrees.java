@@ -10,4 +10,7 @@ public abstract class DeciduousTrees {
 
     public abstract double getHeight();
     public abstract double getWidth();
+
+    public abstract void quantity(boolean increase, int multiplayer);
 }
+
