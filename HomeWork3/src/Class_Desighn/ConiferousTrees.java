@@ -2,7 +2,7 @@ package Class_Desighn;
 
 import java.util.Objects;
 
-public class FruitTrees extends DeciduousTrees {
+public class ConiferousTrees extends DeciduousTrees implements changeQuantity{
     private String name;
 
     private int amount;
@@ -24,49 +24,52 @@ public class FruitTrees extends DeciduousTrees {
             this.amount = amount;
         }
     }
-    public FruitTrees() {
+    public ConiferousTrees() {
         super("black","black");
         this.name = null;
         this.amount = 0;
     }
 
 
-    public FruitTrees(String name, int amount, String leafColor, String barkColor) {
-        super(leafColor,barkColor);
+    public ConiferousTrees(String name, int amount, String leafColor, String barkColor) {
+        super(leafColor, barkColor);
         this.name = name;
         this.amount = amount;
     }
 
-    @Override
     public double getHeight() {
         return 0;
     }
-
-    @Override
     public double getWidth() {
         return 0;
     }
 
     @Override
     public void quantity(boolean increase, int multiplayer) {
-
+        if (increase){
+            amount = amount * multiplayer;
+        }
+        else {
+            amount = amount / multiplayer;
+        }
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FruitTrees that = (FruitTrees) o;
+        ConiferousTrees that = (ConiferousTrees) o;
         return amount == that.amount && Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, amount);
+        return amount*8;
+    }
+    @Override
+    public String toString(){
+        return getClass() + "\nname: " + name + "\namount: " + amount + "\nleafColor: " + leafColor + "\nbarkColor: " + barkColor;
+
     }
 
-    @Override
-    public String toString() {
-        return getClass() + "\nname: " + name + "\namount: " + amount + "\nleafColor: " + leafColor + "\nbarkColor: " + barkColor;
-    }
 }

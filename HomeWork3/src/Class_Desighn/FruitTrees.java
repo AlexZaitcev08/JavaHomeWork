@@ -2,7 +2,7 @@ package Class_Desighn;
 
 import java.util.Objects;
 
-public class ConiferousTrees extends DeciduousTrees implements changeQuantity{
+public class FruitTrees extends DeciduousTrees {
     private String name;
 
     private int amount;
@@ -24,53 +24,49 @@ public class ConiferousTrees extends DeciduousTrees implements changeQuantity{
             this.amount = amount;
         }
     }
-    public ConiferousTrees() {
+    public FruitTrees() {
         super("black","black");
         this.name = null;
         this.amount = 0;
     }
 
 
-    public ConiferousTrees(String name, int amount, String leafColor, String barkColor) {
-        super(leafColor, barkColor);
+    public FruitTrees(String name, int amount, String leafColor, String barkColor) {
+        super(leafColor,barkColor);
         this.name = name;
         this.amount = amount;
     }
 
+    @Override
     public double getHeight() {
         return 0;
     }
+
+    @Override
     public double getWidth() {
         return 0;
     }
 
     @Override
     public void quantity(boolean increase, int multiplayer) {
-        if (increase){
-            amount = amount * multiplayer;
-        }
-        else {
-            amount = amount / multiplayer;
-        }
+
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ConiferousTrees that = (ConiferousTrees) o;
+        FruitTrees that = (FruitTrees) o;
         return amount == that.amount && Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return amount*8;
+        return Objects.hash(name, amount);
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return getClass() + "\nname: " + name + "\namount: " + amount + "\nleafColor: " + leafColor + "\nbarkColor: " + barkColor;
-
     }
-
 }
-

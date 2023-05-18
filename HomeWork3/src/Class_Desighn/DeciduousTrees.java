@@ -1,8 +1,8 @@
 package Class_Desighn;
 
 public abstract class DeciduousTrees {
-    private String name;
-    private int amount;
+    String name;
+    int amount;
 
     String leafColor;
     String barkColor;
@@ -16,4 +16,3 @@ public abstract class DeciduousTrees {
 
     public abstract void quantity(boolean increase, int multiplayer);
 }
-
